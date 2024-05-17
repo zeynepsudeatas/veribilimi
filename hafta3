@@ -1,0 +1,65 @@
+#ödev-1
+  def vergi_hesapla(maas):
+    if maas <= 10000:
+        kesinti_orani = 0.05
+    elif maas <= 25000:
+        kesinti_orani = 0.10
+    elif maas <= 45000:
+        kesinti_orani = 0.25
+    else:
+        kesinti_orani = 0.30
+    kesinti_miktari = maas * kesinti_orani
+    yeni_maas = maas - kesinti_miktari
+
+    return kesinti_orani, kesinti_miktari, yeni_maas
+  maas = float(input("Maaşınızı giriniz: "))
+  kesinti_orani, kesinti_miktari, yeni_maas = vergi_hesapla(maas)
+  print(f"Orijinal maaş: {maas:.2f} TL")
+  print(f"Kesinti oranı: %{kesinti_orani * 100:.0f}")
+  print(f"Kesinti miktarı: {kesinti_miktari:.2f} TL")
+  print(f"Yeni maaş: {yeni_maas:.2f} TL")
+
+
+# ödev-2
+  kullanici_adi = input("Kullanıcı adınızı giriniz: ")
+  sifre = input("Şifrenizi giriniz: ")
+  if len(sifre) >= 6:
+    print("Hesabınız oluşturuldu.")
+  else:
+    print("Şifreniz en az 6 haneli olmalıdır.")
+  
+
+# ödev-3
+  kullanici_adi = input("Kullanıcı adınızı giriniz: ")
+  while True:
+    sifre = input("Şifrenizi giriniz: ")
+    if 5 <= len(sifre) <= 10:
+        print("Hesabınız oluşturuldu.")
+        break
+    else:
+        print("Lütfen girdiğiniz şifre 5 haneden az ve 10 haneden fazla olmasın!")
+  
+
+# ödev-4
+  dogru_kullanici_adi = "uned"
+  dogru_sifre = "12357"
+  kullanici_adi = input("Kullanıcı adınızı giriniz: ")
+  if kullanici_adi == dogru_kullanici_adi:
+    hak_sayisi = 3
+  while hak_sayisi > 0:
+        sifre = input("Şifrenizi giriniz: ")
+if sifre == dogru_sifre:
+            print("Giriş yapıldı.")
+            break
+        else:
+            hak_sayisi -= 1
+            if hak_sayisi > 0:
+                print(f"Yanlış şifre girildi! Kalan hak: {hak_sayisi}")
+            else:
+                print("Yanlış şifre girildi! Giriş hakkınız kalmadı.")
+else:
+    print("Kullanıcı adı yanlış!")
+
+  
+  
+  
