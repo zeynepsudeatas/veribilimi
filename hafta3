@@ -1,4 +1,4 @@
-## ödev-1
+ **ödev-1**
   def vergi_hesapla(maas):
     if maas <= 10000:
         kesinti_orani = 0.05
