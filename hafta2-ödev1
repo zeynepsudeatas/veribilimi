@@ -1,0 +1,49 @@
+# 1)
+  def daire_alani_hesapla(pi, yaricap):
+   alan = pi * (yaricap ** 2)
+    return alan
+  pi = float(input("Pi değerini giriniz: "))
+yaricap = float(input("Yarıçapı giriniz: "))
+alan = daire_alani_hesapla(pi, yaricap)
+print(f"Dairenin alanı: {alan}")
+
+
+ # 2)
+  def faktoriyel(sayi):
+    sonuc = 1
+  for i in range(1, sayi + 1):
+        sonuc *= i
+    return sonuc
+sayi = int(input("Faktöriyelini hesaplamak istediğiniz sayıyı girin: "))
+fakt = faktoriyel(sayi)
+print("{} sayısının faktöriyeli: {}".format(sayi, fakt))
+
+
+  # 3)
+  from datetime import datetime
+  def yas_hesapla(dogum_yili):
+    mevcut_yil = datetime.now().year
+     yas = mevcut_yil - dogum_yili
+    return yas
+dogum_yili = int(input("Doğum yılınızı giriniz: "))
+yas = yas_hesapla(dogum_yili)
+print(f"Yaşınız: {yas}")  
+
+
+
+# 4) 
+def yas_hesapla(dogum_yili):
+  mevcut_yil = datetime.now().year
+  yas = mevcut_yil - dogum_yili
+  return yas
+  
+def emeklilik_durumu(dogum_yili, isim):
+  yas = yas_hesapla(dogum_yili)
+  if yas >= 65:
+        return f"Emekli oldunuz"
+    else:
+        kalan_yil = 65 - yas
+        return f"{isim} emekliliğine {kalan_yil} yıl kaldı."
+dogum_yili = 1960
+isim = "Ali"
+print(emeklilik_durumu(dogum_yili, isim)) 
