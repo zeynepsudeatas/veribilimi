@@ -1,0 +1,48 @@
+1)
+liste = ["Python",True,9,"3",8.4,"Hi-Kod","False",4.7]
+
+"3" değerine ulaşmak için indexleme yapın.
+liste[3]
+
+"Hi-Kod" değerine ulaşmak için indexleme yapın.
+liste[5]
+
+4.7 değerine ulaşmak için indexleme yapın.
+liste[7]
+
+9,"3",8.4,"Hi-Kod" değerlerine ulaşmak için slicing yapın.
+liste[2:6]
+
+8.4,"Hi-Kod","False",4.7 değerlerine ulaşmak için slicing yapın.
+liste[4:8]
+
+2) Verilen listede bulunan string veri tipindeki öğeleri yeni_liste isimli listeye eklenir.
+
+liste = ["Python",True,9,"3",8.4,"Hi-Kod","False",4.7]
+print(liste)
+yeni_liste = []
+print(yeni_liste)
+liste.extend(yeni_liste)
+print(liste)
+
+
+3) Enumerate methodunu araştırın ve aşağıdaki örneği enumerate methodu ile yapın.
+
+for index in range(len(meyveler)):
+
+    print("{}. indexte bulunan meyve: {}".format(index,meyveler[index])
+
+meyveler = ["elma", "armut", "çilek", "kiraz"]
+
+for index, meyve in enumerate(meyveler):
+    print("{}. indexte bulunan meyve: {}".format(index, meyve))
+
+
+
+
+
+
+
+
+
+
