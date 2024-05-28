@@ -1,0 +1,86 @@
+# 1) Öğrenci isimleri ve notlarını içeren sözlük
+ogrenciler = {"Nil": {"Matematik": 78, "Fizik": 33, "Kimya": 47},
+         "Serkan": {"Matematik": 88, "Fizik": 80, "Kimya": 93},
+         "Dilara": {"Matematik": 40, "Fizik": 45, "Kimya": 46},
+         "Ada": {"Matematik": 100, "Fizik": 99, "Kimya": 98},
+         "Ceren": {"Matematik": 22, "Fizik": 16, "Kimya": 12}
+}
+
+# Kullanıcıdan isim ve ders ismi alınır
+isim = input("Öğrencinin ismini giriniz: ")
+ders = input("Ders ismini giriniz (Matematik, Fizik, Kimya): ")
+
+# Öğrencinin belirtilen dersteki notunu ekrana yazdırır
+if isim in ogrenciler:
+    if ders in ogrenciler[isim]:
+        print(f"{isim} adlı öğrencinin {ders} dersindeki notu: {ogrenciler[isim][ders]}")
+    else:
+        print(f"{ders} dersi {isim} adlı öğrenci için bulunamadı.")
+else:
+    print(f"{isim} adlı öğrenci bulunamadı.")
+
+# 2) Sözlük üzerinde değerleri değiştirme, yeni değer ekleme, kullanıcıya ulaşmak istediği bilgileri sorma gibi uygulamalar yapın.
+ogrenciler = {"Nil": {"Matematik": 78, "Fizik": 33, "Kimya": 47},
+         "Serkan": {"Matematik": 88, "Fizik": 80, "Kimya": 93},
+         "Dilara": {"Matematik": 40, "Fizik": 45, "Kimya": 46},
+         "Ada": {"Matematik": 100, "Fizik": 99, "Kimya": 98},
+         "Ceren": {"Matematik": 22, "Fizik": 16, "Kimya": 12}
+}
+
+def not_goruntule(isim, ders):
+    if isim in ogrenciler:
+        if ders in ogrenciler[isim]:
+            print(f"{isim} adlı öğrencinin {ders} dersindeki notu: {ogrenciler[isim][ders]}")
+        else:
+            print(f"{ders} dersi {isim} adlı öğrenci için bulunamadı.")
+    else:
+        print(f"{isim} adlı öğrenci bulunamadı.")
+
+def not_guncelle(isim, ders, yeni_not):
+    if isim in ogrenciler:
+        ogrenciler[isim][ders] = yeni_not
+        print(f"{isim} adlı öğrencinin {ders} dersindeki notu {yeni_not} olarak güncellendi.")
+    else:
+        print(f"{isim} adlı öğrenci bulunamadı.")
+
+def ogrenci_ekle(isim, notlar):
+    if isim not in ogrenciler:
+        ogrenciler[isim] = notlar
+        print(f"{isim} adlı öğrenci eklendi.")
+    else:
+        print(f"{isim} adlı öğrenci zaten mevcut.")
+
+def ana_menu():
+    while True:
+        print("\n1. Not Görüntüle")
+        print("2. Not Güncelle")
+        print("3. Yeni Öğrenci Ekle")
+        print("4. Çıkış")
+        secim = input("Bir seçenek giriniz: ")
+
+        if secim == "1":
+            isim = input("Öğrencinin ismini giriniz: ")
+            ders = input("Ders ismini giriniz (Matematik, Fizik, Kimya): ")
+            not_goruntule(isim, ders)
+        elif secim == "2":
+            isim = input("Öğrencinin ismini giriniz: ")
+            ders = input("Ders ismini giriniz (Matematik, Fizik, Kimya): ")
+            yeni_not = int(input(f"{isim} adlı öğrencinin {ders} dersindeki yeni notunu giriniz: "))
+            not_guncelle(isim, ders, yeni_not)
+        elif secim == "3":
+            isim = input("Yeni öğrencinin ismini giriniz: ")
+            matematik = int(input("Matematik notunu giriniz: "))
+            fizik = int(input("Fizik notunu giriniz: "))
+            kimya = int(input("Kimya notunu giriniz: "))
+            notlar = {"Matematik": matematik, "Fizik": fizik, "Kimya": kimya}
+            ogrenci_ekle(isim, notlar)
+        elif secim == "4":
+            print("Programdan çıkılıyor.")
+            break
+        else:
+            print("Geçersiz seçenek, lütfen tekrar deneyiniz.")
+
+ana_menu()
+
+
+
